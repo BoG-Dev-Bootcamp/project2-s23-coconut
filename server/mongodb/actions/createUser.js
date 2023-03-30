@@ -1,12 +1,12 @@
 import connectDB from "../index.js"
-import Training from "../models/training.js"
+import User from "../models/user.js"
 
 export default async function createUser(userData) {
     await connectDB()
     try {
-        const training = new User(userData)
-        await training.save()
+        const user = new User(userData)
+        await user.save()
     } catch (e) {
-        throw new Error("Unable to create training log. Invalid data")
+        throw new Error("Unable to create user. Invalid data")
     }
 }
