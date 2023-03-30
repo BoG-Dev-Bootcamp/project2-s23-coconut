@@ -7,7 +7,7 @@ export default async function handler(req, res) {
         } catch (e) {
             return res.status(500).send("Unable to save training log")
         }
-        return res.status(200).send("New training log was created")
+        return res.status(200).send("Successfully created a new training log")
     }
     return res.status(400).send("Incorrect req method type")
 

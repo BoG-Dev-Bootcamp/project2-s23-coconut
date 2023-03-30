@@ -13,6 +13,9 @@ const trainingSchema = new mongoose.Schema({
         type: Integer,
         required: true
     },
+    trainingLogVideo: {
+        type: String
+    },
     animal: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Animal' }],
     user: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }]
 })
