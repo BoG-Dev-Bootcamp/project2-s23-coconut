@@ -10,7 +10,7 @@ const trainingSchema = new mongoose.Schema({
         required: true
     },
     hours: {
-        type: Integer,
+        type: Number,
         required: true
     },
     trainingLogVideo: {
