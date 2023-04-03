@@ -1,10 +1,8 @@
-import mongoose from "mongoose"
-import User from "../../../server/mongodb/models/user.js"
+import getUsers from "../../../server/mongodb/actions/getUsers";
 
 /*
  * Returns all the users in the database WITHOUT their passwords
  */
-
 export default async function handler(req, res) {
     /*
     "I think there’s supposed to be an admin endpoint for
@@ -16,7 +14,7 @@ export default async function handler(req, res) {
     */
     if (req.method == 'GET') {
         try {
-            await getUser(req)
+            await getUsers(req)
         } catch (e) {
             return res.status(500).send("Unable to get users")
         }
