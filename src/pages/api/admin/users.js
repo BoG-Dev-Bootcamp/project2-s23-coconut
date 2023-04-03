@@ -1,15 +1,41 @@
+import mongoose from "mongoose"
+import User from "../../../server/mongodb/models/user.js"
+
 /*
- * Returns all the users in the database WITHOUT their passwords.
+ * Returns all the users in the database WITHOUT their passwords
  */
+
 export default async function handler(req, res) {
+    /*
+    "I think there’s supposed to be an admin endpoint for
+    each schema (admin/users, admin/dogs) and based on
+    query Params specific pages (or lists of users, dogs,
+    etc) would be returned as json
+    
+    admin/users?page=1 would give the first 10 users
+    */
     if (req.method == 'GET') {
-        await connectDB()
+        //await connectDB()
+        
+        // empty list to hold all the users
+        const users_list = []
+        
+        // page number, i.e. admin/users?page=2
+        const page_number = req.query.page
 
-        // while next user document is not empty?
-        cursor = db.students.find().limit(10)
+        const cursor = User.find().limit(10)
 
-        // if no documents left to return
-        if 
+        // since we already found the first 10 users,
+        // we're already on page 1
+        const current_page = 1
+
+        while (cursor && current_page < page_number) {
+            // logic to find last id
+            User.find({'_id': {'$gt': last_id}}).limit(10)
+            current_page++
+        }
+
+        return cursor // NOT THE ACTUAL STATEMENT PROBABLY
 
         try {
             return res.status(200).json({"healthy": true})
