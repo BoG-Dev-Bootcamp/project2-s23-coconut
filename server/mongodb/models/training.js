@@ -16,8 +16,8 @@ const trainingSchema = new mongoose.Schema({
     trainingLogVideo: {
         type: String
     },
-    animal: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Animal' }],
-    user: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }]
+    animal: { type: mongoose.Schema.Types.ObjectId, ref: 'Animal' },
+    user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
 })
 
 export default mongoose.models?.Training || mongoose.model("Training", trainingSchema)
