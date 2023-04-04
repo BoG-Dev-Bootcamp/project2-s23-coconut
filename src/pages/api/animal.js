@@ -3,7 +3,7 @@ import createAnimal from "../../../server/mongodb/actions/createAnimal";
 export default async function handler(req, res) {
     if (req.method == 'POST') {
         try {
-            await createTraining(req.body)
+            await createAnimal(req.body)
         } catch (e) {
             return res.status(500).send("Unable to save animal")
         }
