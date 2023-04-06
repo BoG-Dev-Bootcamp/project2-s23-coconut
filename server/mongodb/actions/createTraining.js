@@ -1,31 +1,32 @@
 import connectDB from "../index.js"
 import Training from "../models/training.js"
-import getAnimalById from "./getAnimalById.js"
+import getUserByAnimalId from "./getUserByAnimalId.js"
 import getUserById from "./getUserById.js"
 
 export default async function createTraining(trainingData) {
     await connectDB()
     const training = new Training(trainingData)
-    let animal = training.animal
-    try {
-        animal = await getAnimalById(animal)
-    } catch (e) {
-        return res.status(400).send("Unable to find animal")
-    }
     let user
     try {
-        user = await getUserById(animal.owner)
+        user = await getUserByAnimalId(training.animal)
     } catch (e) {
-        return res.status(400).send("Unable to find animal")
+        console.log(e)
+        console.log("Unable to find animal")
     }
-    console.log(training.user)
-    if (training.user == user) {
+    let user2
+    try {
+        user2 = await getUserById(training.user)
+    } catch (e) {
+        console.log(e)
+        console.log("Unable to find user")
+    }
+    if (JSON.stringify(user) == JSON.stringify(user2)) {
         try {
             await training.save()
         } catch (e) {
-            return res.status(400).send("Unable to create training log. Invalid data")
+            return console.log("Unable to create training log. Invalid data")
         }
     } else {
-        return res.status(400).send("Unable to create training log. Invalid data")
+        return console.log("Unable to create training log. Invalid data")
     }
 }

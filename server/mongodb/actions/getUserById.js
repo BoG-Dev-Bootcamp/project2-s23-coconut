@@ -6,6 +6,6 @@ export default async function getUserById(identifier) {
     try {
         return await User.find(identifier)
     } catch (e) {
-        throw new Error("Unable to find animal.")
+        throw new Error("Unable to find user.")
     }
 }
