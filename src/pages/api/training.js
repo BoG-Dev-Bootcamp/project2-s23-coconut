@@ -5,6 +5,7 @@ export default async function handler(req, res) {
         try {
             await createTraining(req.body)
         } catch (e) {
+            console.log(e)
             return res.status(500).send("Unable to save training log")
         }
         return res.status(200).send("Successfully created a new training log")
