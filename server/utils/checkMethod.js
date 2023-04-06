@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server"
 
 export default function checkMethod(method, methods) {
-    const allowed = false;
+    let allowed = false;
     for(let i = methods.length - 1; i >= 0; i--) {
         if (methods[i] == method) {
             allowed = true
@@ -9,7 +9,7 @@ export default function checkMethod(method, methods) {
     }
     if (!allowed) {
         return new NextResponse(
-            JSON.stringify({ success: false, error: "Invalid request method: " + req.method }),
+            JSON.stringify({ success: false, error: "Invalid request method: " + method }),
             { status: 400 }
         )
     }
