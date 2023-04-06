@@ -13,20 +13,14 @@ export default async function createTraining(trainingData) {
         console.log(e)
         console.log("Unable to find animal")
     }
-    let user2
-    try {
-        user2 = await getUserById(training.user)
-    } catch (e) {
-        console.log(e)
-        console.log("Unable to find user")
-    }
-    if (JSON.stringify(user) == JSON.stringify(user2)) {
+    if (JSON.stringify(user[0].owner) == JSON.stringify(training.user)) {
         try {
             await training.save()
         } catch (e) {
+            console.log(e)
             return console.log("Unable to create training log. Invalid data")
         }
     } else {
-        return console.log("Unable to create training log. Invalid data")
+        return console.log("Unable to create training log. Wrong user to animal.")
     }
 }

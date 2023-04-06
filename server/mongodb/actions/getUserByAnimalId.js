@@ -4,15 +4,9 @@ import User from "../models/user.js"
 
 export default async function getUserByAnimalId(identifier) {
     await connectDB()
-    let animal
     try {
-        animal = await Animal.find(identifier)
+        return await Animal.find(identifier, {"owner":1, "_id":0})
     } catch (e) {
         throw new Error("Unable to find animal.")
-    }
-    try {
-        return await User.find(animal.owner)
-    } catch (e) {
-        throw new Error("Unable to find user.")
     }
 }
