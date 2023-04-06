@@ -2,7 +2,7 @@ import mongoose from "mongoose"
 
 const trainingSchema = new mongoose.Schema({
     date: {
-        type: String,
+        type: Date,
         required: true
     },
     description: {
