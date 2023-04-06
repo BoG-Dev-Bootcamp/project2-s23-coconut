@@ -4,7 +4,7 @@ export default async function handler(req, res) {
     if (req.method == 'POST') {
         try {
             await createUser(req.body)
-        } catch (e) {
+        } catch (e) {z
             return res.status(500).send("Unable to create user")
         }
         return res.status(200).send("Successfully created a user")
