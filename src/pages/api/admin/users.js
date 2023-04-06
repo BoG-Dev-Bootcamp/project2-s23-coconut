@@ -1,4 +1,4 @@
-import getUsers from "../../../server/mongodb/actions/getUsers";
+import getUsers from "../../../../server/mongodb/actions/getUsers";
 
 /*
  * Returns all the users in the database WITHOUT their passwords
@@ -12,12 +12,14 @@ export default async function handler(req, res) {
     
     admin/users?page=1 would give the first 10 users
     */
+   let users
     if (req.method == 'GET') {
         try {
-            await getUsers(req)
+            users = await getUsers(req)
         } catch (e) {
             return res.status(500).send("Unable to get users")
         }
+        console.log(users)
         return res.status(200).send("Successfully returned users")
     }
     return res.status(400).send("Incorrect req method type")

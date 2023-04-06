@@ -5,16 +5,16 @@ export default async function getTraining(req) {
     await connectDB()
     try {
         // page number, i.e. admin/training?page=2
-        const page_number = req.query.page
+        let page_number = req.query.page
 
         // "cursor" just references how we "move"
         // through pages, e.g. scrolling thru them
-        const cursor = await Animal.find().limit(10)
+        let cursor = await Animal.find().limit(10)
 
         // since we already found the first 10 logs,
         // we're already on page 1
-        const current_page = 1
-        const last_id = undefined
+        let current_page = 1
+        let last_id = undefined
 
         // while we still have data to return AND find() doesn't
         // return an empty array

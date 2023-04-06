@@ -13,21 +13,21 @@ export default async function getUsers(req) {
         through pages, e.g. scrolling through them.
         it's similar to going through a tree by
         setting a node called curr & updating it */
-        const cursor = await User.find({ 'password': 0 }).limit(10)
+        let cursor = await User.find({}).select(['-password']).limit(10)
 
         // { 'password': 0 } excludes the password field from returned docs
 
         /* since we already found the first 10 users,
         we're already on page 1 */
-        const current_page = 1
+        let current_page = 1
 
-        const last_id = undefined
+        let last_id = undefined
 
         /* while we still have data to return AND find() doesn't
         return an empty array */
         while (cursor.length != 0 && current_page < page_number) {
             last_id = cursor[9]._id
-            cursor = await User.find({'_id': {'$gt': last_id}}, {'password': 0}).limit(10)
+            cursor = await User.find({'_id': {'$gt': last_id}}).select(['-password']).limit(10)
             current_page++
         }
 
