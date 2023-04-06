@@ -11,3 +11,5 @@ export default async function createAnimal(animalData, res) {
         return res.status(400).send("Unable to create animal. Invalid data")
     }
 }
+
+middleware(req, allowedMethods)
