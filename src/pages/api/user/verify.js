@@ -1,5 +1,3 @@
-import auth from "../../../../server/utils/auth"
-
 export default async function handler(req, res) {
     if (req.method == 'POST') {
         try {
@@ -19,17 +17,4 @@ export default async function handler(req, res) {
         }
     }
     return res.status(400).send("Incorrect req method type")
-}
-
-import auth from "../../../../server/utils/auth"
-
-export default function handler(req, res) {
-    try {
-        // if user email + password correct logic
-        const decoded = auth(req)
-        return res.status(200).json(decoded)
-    }
-    catch (e) {
-        return res.status(400).send(e.message)
-    }
 }
