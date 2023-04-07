@@ -8,9 +8,6 @@ export default async function login(req) {
     const { username, password } = req.body
     
     const user = await User.findOne({ username })
-    const result = await bcrypt.compare(password, user.password)
 
-    if (!result) {
-        throw new Error("Unable to create user. Invalid data")
-    }
+    return result = await bcrypt.compare(password, user.password)
 }
