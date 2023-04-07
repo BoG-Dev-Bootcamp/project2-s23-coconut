@@ -5,9 +5,11 @@ import bcrypt from "bcryptjs"
 export default async function login(req) {
     await connectDB()
 
-    const { username, password } = req.body
+    const { email, password } = req.body
     
-    const user = await User.findOne({ username })
+    const user = await User.findOne({ email })
 
-    return result = await bcrypt.compare(password, user.password)
+    let result
+
+    return result = await bcrypt.compare(password, user.password )
 }

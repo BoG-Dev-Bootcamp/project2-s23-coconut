@@ -1,10 +1,12 @@
 import login from "../../../../server/mongodb/actions/loginUser"
 
 export default async function handler(req, res) {
+    let result
     if (req.method == 'POST') {
         try {
-            await login(req)
+            result = await login(req)
         } catch (e) {
+            console.log(e)
             return res.status(500).send("Unable to find user")
         }
         if (result) {
