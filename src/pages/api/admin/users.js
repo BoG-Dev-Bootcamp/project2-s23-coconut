@@ -1,5 +1,5 @@
 import getUsers from "../../../../server/mongodb/actions/getUsers";
-import auth from "../../../server/utils/auth"
+import auth from "../../../../server/utils/auth"
 
 /*
  * Returns all the users in the database WITHOUT their passwords

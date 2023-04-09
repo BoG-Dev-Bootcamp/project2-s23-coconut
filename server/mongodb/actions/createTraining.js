@@ -1,7 +1,7 @@
 import connectDB from "../index.js"
 import Training from "../models/training.js"
 import getUserByAnimalId from "./getUserByAnimalId.js"
-import getUserById from "./getUserById.js"
+import updateHours from "./updateHours.js"
 
 export default async function createTraining(trainingData, res) {
     await connectDB()
@@ -15,6 +15,7 @@ export default async function createTraining(trainingData, res) {
     if (JSON.stringify(user[0].owner) == JSON.stringify(training.user)) {
         try {
             await training.save()
+            updateHours(trainingData.animal, trainingData.hours)
             return res.status(200).send("Successfully created a new training")
         } catch (e) {
             return res.status(400).send("Unable to create training log. Invalid data")
