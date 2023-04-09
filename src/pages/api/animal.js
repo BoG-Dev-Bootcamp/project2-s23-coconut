@@ -1,7 +1,13 @@
 import createAnimal from "../../../server/mongodb/actions/createAnimal";
+import auth from "../../../server/utils/auth"
 
 export default async function handler(req, res) {
     if (req.method == 'POST') {
+        try {
+            auth(req)
+        } catch (e) {
+            return res.status(400).send("Please log in first")
+        }
         try {
             return await createAnimal(req.body, res)
         } catch (e) {

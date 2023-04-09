@@ -1,19 +1,18 @@
+import login from "../../../../server/mongodb/actions/loginUser"
+import verify from "../../../../server/mongodb/actions/verifyUser"
+
 export default async function handler(req, res) {
+    let result
     if (req.method == 'POST') {
         try {
-            const token = sign({ admin: true }, process.env.SECRET, { expiresIn: '60s' })
-    
-            const serialized = serialize("OurJWT", token, {
-                httpOnly: true,
-                secure: false, // change this in production
-                sameSite: "strict",
-                maxAge: 60,
-            });
-            res.setHeader('Set-Cookie', serialized)
-            res.status(200).send("JWT Created! " + token)
+            result = await login(req, res)
+        } catch (e) {
+            return res.status(500).send("Unable to find user")
         }
-        catch (e) {
-            return res.status(400).send(e.message)
+        if (result) {
+            return verify(req, res)
+        } else {
+            return res.status(403).send("Incorrect email or password")
         }
     }
     return res.status(400).send("Incorrect req method type")

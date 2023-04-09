@@ -1,8 +1,14 @@
 import getAnimals from "../../../../server/mongodb/actions/getAnimals";
+import auth from "../../../server/utils/auth"
 
 export default async function handler(req, res) {
     let animals;
     if (req.method == 'GET') {
+        try {
+            auth(req)
+        } catch (e) {
+            return res.status(400).send("Please log in first")
+        }
         try {
             animals = await getAnimals(req)
         } catch (e) {
