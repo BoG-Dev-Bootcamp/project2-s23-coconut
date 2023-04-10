@@ -7,9 +7,9 @@ export default async function login(req) {
 
     const { email, password } = req.body
     
-    const user = await User.findOne({ email })
+    const user = await User.findOne({ email }, {"password":1, "_id":1})
 
     let result
 
-    return result = await bcrypt.compare(password, user.password )
+    return {result : result = await bcrypt.compare(password, user.password ), _id : JSON.stringify(user._id)}
 }
