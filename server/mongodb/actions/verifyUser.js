@@ -10,6 +10,7 @@ export default function verify(req, res) {
             secure: false, // change this in production
             sameSite: "strict",
             maxAge: 60,
+            path: "/"
         });
         res.setHeader('Set-Cookie', serialized)
         return res.status(200).send("JWT Created! " + token + " Successfully verified.")
