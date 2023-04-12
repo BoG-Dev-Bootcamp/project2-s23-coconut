@@ -1,5 +1,5 @@
 import getUsers from "../../../../server/mongodb/actions/readUsers";
-import auth from "../../../../server/utils/auth"
+import adminAuth from "../../../../server/utils/adminAuth"
 
 /*
  * Returns all the users in the database WITHOUT their passwords
@@ -16,9 +16,9 @@ export default async function handler(req, res) {
    let users
     if (req.method == 'GET') {
         try {
-            auth(req)
+            adminAuth(req)
         } catch (e) {
-            return res.status(400).send("Please log in first")
+            return res.status(400).send("Not logged in as an admin")
         }
         try {
             users = await getUsers(req)
