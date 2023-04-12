@@ -1,4 +1,4 @@
-import getAnimals from "../../../../server/mongodb/actions/getAnimals";
+import getAnimals from "../../../../server/mongodb/actions/readAnimals";
 import auth from "../../../server/utils/auth"
 
 export default async function handler(req, res) {

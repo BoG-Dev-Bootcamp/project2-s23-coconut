@@ -1,5 +1,5 @@
-import login from "../../../../server/mongodb/actions/loginUser"
-import verify from "../../../../server/mongodb/actions/verifyUser"
+import login from "../../../../server/utils/loginUser"
+import verify from "../../../../server/utils/verifyUser"
 
 export default async function handler(req, res) {
     if (req.method == 'POST') {

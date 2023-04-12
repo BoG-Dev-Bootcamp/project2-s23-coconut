@@ -1,4 +1,4 @@
-import getTraining from "../../../../server/mongodb/actions/getTraining";
+import getTraining from "../../../../server/mongodb/actions/readTraining";
 import auth from "../../../server/utils/auth"
 
 export default async function handler(req, res) {

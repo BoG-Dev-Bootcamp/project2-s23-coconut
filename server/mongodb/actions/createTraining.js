@@ -1,6 +1,6 @@
 import connectDB from "../index.js"
 import Training from "../models/training.js"
-import getUserByAnimalId from "./getUserByAnimalId.js"
+import getUserByAnimalId from "./readUserByAnimalId.js"
 import updateHours from "./updateHours.js"
 
 export default async function createTraining(trainingData, userInput, res) {

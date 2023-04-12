@@ -1,4 +1,4 @@
-import getUsers from "../../../../server/mongodb/actions/getUsers";
+import getUsers from "../../../../server/mongodb/actions/readUsers";
 import auth from "../../../../server/utils/auth"
 
 /*

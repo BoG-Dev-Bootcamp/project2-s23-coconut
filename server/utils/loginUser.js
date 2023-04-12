@@ -1,5 +1,5 @@
-import connectDB from "../index.js"
-import User from "../models/user.js"
+import connectDB from "../mongodb/index.js"
+import User from "../mongodb/models/user.js"
 import bcrypt from "bcryptjs"
 
 export default async function login(req) {

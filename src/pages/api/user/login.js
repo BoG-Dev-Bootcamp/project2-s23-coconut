@@ -1,4 +1,4 @@
-import login from "../../../../server/mongodb/actions/loginUser"
+import login from "../../../../server/utils/loginUser"
 
 export default async function handler(req, res) {
     let result
