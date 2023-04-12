@@ -9,14 +9,14 @@ const animalSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    owner: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
     dateOfBirth: {
         type: Date,
         required: true
     },
-    profilePicture: {
-        type: String
-    },
+    owner: { 
+        type: mongoose.Schema.Types.ObjectId, ref: 'User',
+        required: true
+    }
 })
 
 export default mongoose.models?.Animal || mongoose.model("Animal", animalSchema)

@@ -11,5 +11,5 @@ export default async function login(req) {
 
     let result
 
-    return {result : result = await bcrypt.compare(password, user.password ), _id : JSON.stringify(user._id)}
+    return {result : result = await bcrypt.compare(password, user.password ), _id : user._id}
 }
