@@ -1,4 +1,3 @@
-import mongoose from "mongoose"
 import connectDB from "../index.js"
 import Animal from "../models/animal.js"
 

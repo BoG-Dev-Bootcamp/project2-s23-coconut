@@ -3,7 +3,7 @@ import Training from "../models/training.js"
 import getUserByAnimalId from "./getUserByAnimalId.js"
 import updateHours from "./updateHours.js"
 
-export default async function createTraining(trainingData, res) {
+export default async function createTraining(trainingData, userInput, res) {
     await connectDB()
     const training = new Training(trainingData)
     let user
@@ -12,7 +12,7 @@ export default async function createTraining(trainingData, res) {
     } catch (e) {
         return res.status(400).send("Unable to find animal's owner")
     }
-    if (JSON.stringify(user[0].owner) == JSON.stringify(training.user)) {
+    if (JSON.stringify(user[0].owner) == JSON.stringify(userInput)) {
         try {
             await training.save()
             updateHours(trainingData.animal, trainingData.hours)

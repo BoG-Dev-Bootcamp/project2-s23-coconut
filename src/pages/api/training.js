@@ -9,7 +9,7 @@ export default async function handler(req, res) {
             return res.status(400).send("Please log in first")
         }
         try {
-            return await createTraining(req.body, res)
+            return await createTraining(req.body, auth(req)._id, res)
         } catch (e) {
             return res.status(500).send("Unable to save training log")
         }
