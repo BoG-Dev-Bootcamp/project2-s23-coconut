@@ -15,6 +15,35 @@ export default function Name() {
 
     if (isLoading) return <div><h2>Loading</h2></div>
 
+    if (page == 1) {
+        return (
+            <>
+                <h1><Link href="/">Dog Training</Link></h1>
+                <h2>Animals</h2>
+                {isValidating ? (
+                    <h2>Validating</h2>
+                ) : (
+                    <>
+                        <p>{data}</p>
+                        <p>Page: {page}</p>
+                        <button onClick={() => setPage(page + 1)}>Next</button>
+                    </>
+            )}
+            </>
+        )
+    }
+
+    if (!data) {
+        return (
+            <>
+                <h1><Link href="/">Dog Training</Link></h1>
+                <p>Not a valid page</p>
+                <button onClick={() => setPage(page - 1)}>Previous</button>
+                <p>Page: {page}</p>
+            </>
+        )
+    }
+
     return (
         <>
             <h1><Link href="/">Dog Training</Link></h1>
