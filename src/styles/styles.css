@@ -14,3 +14,7 @@ a {
     cursor: pointer;
     text-align: left;
 }
+.pages {
+    display: flex;
+    flex-direction: row
+  }

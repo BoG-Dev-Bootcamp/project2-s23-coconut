@@ -11,11 +11,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <h1>Dog Training Links</h1>
+      <Link href="/createAccount">Sign up</Link>
+      <Link href="/login">Log in</Link>
       <Link href="/userList">Get a list of users</Link>
-      <Link href="/animaList">Get a list of animals</Link>
+      <Link href="/animalList">Get a list of animals</Link>
       <Link href="/trainingList">Get a list of training logs</Link>
-      <Link href="/login">Login</Link>
-      <Link href="/createUser">Create a user</Link>
       <Link href="/createAnimal">Create an animal</Link>
       <Link href="/createTraining">Create a training log</Link>
     </>
