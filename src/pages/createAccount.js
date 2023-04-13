@@ -43,7 +43,7 @@ export default function SignUp() {
                     <button onClick={() => {
                         createUser(`/api/user`, fn, ln, e, p)
 
-                    }}>Log In</button>
+                    }}>Create Account</button>
                 </>
         </>
     )
