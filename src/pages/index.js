@@ -12,7 +12,7 @@ export default function Home() {
       </Head>
       <h1>Dog Training Links</h1>
       <Link href="/userList">Get a list of users</Link>
-      <Link href="/animaList">Get a list of animals</Link>
+      <Link href="/animalList">Get a list of animals</Link>
       <Link href="/trainingList">Get a list of training logs</Link>
       <Link href="/login">Login</Link>
       <Link href="/createUser">Create a user</Link>
