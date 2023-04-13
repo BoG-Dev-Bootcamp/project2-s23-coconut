@@ -2,6 +2,14 @@ import axios from 'axios'
 import Link from 'next/link'
 import { useState } from 'react'
 
+async function logIn(url, e, p) {
+    const res = await axios.post(url, {
+        email: e,
+        password: p
+    })
+return res.data
+}
+
 async function createUser(url, fn, ln, e, p) {
         const res = await axios.post(url, {
             firstName: fn,
@@ -42,8 +50,9 @@ export default function SignUp() {
                         }} />
                     <button onClick={() => {
                         createUser(`/api/user`, fn, ln, e, p)
+                        logIn(`/api/user/verify`, e, p)
 
-                    }}>Create Account</button>
+                    }}>Sign up</button>
                 </>
         </>
     )
