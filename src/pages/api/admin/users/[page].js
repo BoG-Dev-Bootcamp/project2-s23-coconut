@@ -13,7 +13,7 @@ export default async function handler(req, res) {
     admin/users?page=1 would give the first 10 users
     */
    let users
-    if (req.method == 'GET') {
+    if (req.method == 'GET') {  
         try {
             users = await getUsers(req)
         } catch (e) {

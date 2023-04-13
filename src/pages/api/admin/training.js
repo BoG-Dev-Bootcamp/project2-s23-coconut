@@ -5,9 +5,9 @@ export default async function handler(req, res) {
     let training
     if (req.method == 'GET') {
         try {
-            auth(req)
+            adminAuth(req)
         } catch (e) {
-            return res.status(400).send("Please log in first")
+            return res.status(400).send("Not logged in as an admin")
         }
         try {
             training = await getTraining(req)

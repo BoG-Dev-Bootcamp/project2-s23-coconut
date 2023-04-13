@@ -27,14 +27,16 @@ export default function Name() {
         return (
             <>
                 <h1><Link href="/">Dog Training</Link></h1>
-                <h2>Animals</h2>
+                <h2>Users</h2>
                 {isValidating ? (
                     <h2>Validating</h2>
                 ) : (
                     <>
                         {listItems}
+                        <div className = "pages">
                         <p>Page: {page}</p>
                         <button onClick={() => setPage(page + 1)}>Next</button>
+                        </div>
                     </>
             )}
             </>
@@ -46,8 +48,10 @@ export default function Name() {
             <>
                 <h1><Link href="/">Dog Training</Link></h1>
                 <p>Not a valid page</p>
-                <button onClick={() => setPage(page - 1)}>Previous</button>
-                <p>Page: {page}</p>
+                <div className = "pages">
+                        <button onClick={() => setPage(page - 1)}>Previous</button>
+                        <p>Page: {page}</p>
+                </div>
             </>
         )
     }
@@ -61,9 +65,11 @@ export default function Name() {
             ) : (
                 <>
                     {listItems}
-                    <button onClick={() => setPage(page - 1)}>Previous</button>
-                    <p>Page: {page}</p>
-                    <button onClick={() => setPage(page + 1)}>Next</button>
+                    <div className = "pages">
+                        <button onClick={() => setPage(page - 1)}>Previous</button>
+                        <p>Page: {page}</p>
+                        <button onClick={() => setPage(page + 1)}>Next</button>
+                    </div>
                 </>
             )}
         </>
