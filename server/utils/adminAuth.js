@@ -7,7 +7,7 @@ export default function adminAuth(req) {
     }
     try {
         const decoded = verify(jwt, process.env.SECRET)
-        if (decoded._id == "64306701ede2915796667495") {
+        if (decoded._id == "643826d023ab74f6d31d4ac4" || decoded._id == "643826ed23ab74f6d31d4ac6") {
             return decoded
         } else {
             throw new Error("Not an admin")

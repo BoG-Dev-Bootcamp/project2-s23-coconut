@@ -6,7 +6,6 @@ export default async function createAnimal(animalData, owner, res) {
     try {
         const { name, hoursTrained, dateOfBirth } = animalData
         const data = {name, hoursTrained, dateOfBirth, owner}
-        console.log(data)
         const animal = new Animal(data)
         await animal.save()
         return res.status(200).send("Successfully created a new animal")
