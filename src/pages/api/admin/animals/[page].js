@@ -8,15 +8,14 @@ export default async function handler(req, res) {
         } catch (e) {
             return res.status(500).send("Unable to get animals")
         }
-        let animalNames = []
-        for (let i = 0; i < animals.length; i++) {
-            if (i != animals.length - 1) {
-                animalNames[i] = animals[i].name + ", Hours: " + animals[i].hoursTrained + " / "
-            } else {
-                animalNames[i] = animals[i].name + ", Hours: " + animals[i].hoursTrained
-            }        
+
+        animals = animals.map(getInfo);
+
+        function getInfo(animal) {
+            return "Name: " + animal.name + ", Hours: " + animal.hoursTrained
         }
-        return res.status(200).send(animalNames)
+
+        return res.status(200).send(animals)
     }
     return res.status(400).send("Incorrect req method type")
 }

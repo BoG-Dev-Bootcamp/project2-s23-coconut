@@ -8,15 +8,14 @@ export default async function handler(req, res) {
         } catch (e) {
             return res.status(500).send("Unable to get training logs")
         }
-        let trainingNames = []
-        for (let i = 0; i < training.length; i++) {
-            if (i != training.length - 1) {
-                trainingNames[i] = training[i].description + ", Hours: " + training[i].hours + " / "
-            } else {
-                trainingNames[i] = training[i].description + " Hours: " + training[i].hours
-            }        
+
+        training = training.map(getInfo);
+
+        function getInfo(tr) {
+            return "Description: " + tr.description + ", Hours: " + tr.hours
         }
-        return res.status(200).send(trainingNames)
+
+        return res.status(200).send(training)
     }
     return res.status(400).send("Incorrect req method type")
 }

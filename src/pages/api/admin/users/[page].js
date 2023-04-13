@@ -19,15 +19,14 @@ export default async function handler(req, res) {
         } catch (e) {
             return res.status(500).send("Unable to get users")
         }
-        let userNames = []
-        for (let i = 0; i < users.length; i++) {
-            if (i != users.length - 1) {
-                userNames[i] = users[i].firstName + " " + users[i].lastName + " / "
-            } else {
-                userNames[i] = users[i].firstName + " " + users[i].lastName
-            }        
+
+        users = users.map(getInfo);
+
+        function getInfo(user) {
+            return "Name: " + user.firstName + " " + user.lastName + ", Email: " + user.email
         }
-        return res.status(200).send(userNames)
+
+        return res.status(200).send(users)
     }
     return res.status(400).send("Incorrect req method type")
 }

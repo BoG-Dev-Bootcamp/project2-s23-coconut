@@ -13,6 +13,14 @@ export default function Name() {
 
     let { data, isLoading, isValidating } = useSWR(`/api/admin/training/` + page, fetcher)
 
+    let listItems
+
+    if (data) {
+        listItems = data.map((training) =>
+            <li>{training}</li>
+        );
+    }
+
     if (isLoading) return <div><h2>Loading</h2></div>
 
 
@@ -25,7 +33,7 @@ export default function Name() {
                     <h2>Validating</h2>
                 ) : (
                     <>
-                        <p>{data}</p>
+                        {listItems}
                         <p>Page: {page}</p>
                         <button onClick={() => setPage(page + 1)}>Next</button>
                     </>
@@ -53,7 +61,7 @@ export default function Name() {
                 <h2>Validating</h2>
             ) : (
                 <>
-                    <p>{data}</p>
+                    {listItems}
                     <button onClick={() => setPage(page - 1)}>Previous</button>
                     <p>Page: {page}</p>
                     <button onClick={() => setPage(page + 1)}>Next</button>
