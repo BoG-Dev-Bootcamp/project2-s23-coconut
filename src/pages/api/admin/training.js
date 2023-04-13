@@ -1,5 +1,5 @@
 import getTraining from "../../../../server/mongodb/actions/readTraining";
-import auth from "../../../server/utils/auth"
+import adminAuth from "../../../../server/utils/adminAuth"
 
 export default async function handler(req, res) {
     let training
@@ -14,8 +14,7 @@ export default async function handler(req, res) {
         } catch (e) {
             return res.status(500).send("Unable to get training logs")
         }
-        console.log(training)
-        return res.status(200).send("Successfully returned training logs")
+        return res.status(200).send(training)
     }
     return res.status(400).send("Incorrect req method type")
 

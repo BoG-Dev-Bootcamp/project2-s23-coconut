@@ -1,4 +1,5 @@
 import getTraining from "../../../../../server/mongodb/actions/readTraining";
+import adminAuth from "../../../../../server/utils/adminAuth"
 
 export default async function handler(req, res) {
    let training

@@ -1,4 +1,5 @@
 import getAnimals from "../../../../../server/mongodb/actions/readAnimals";
+import adminAuth from "../../../../../server/utils/adminAuth"
 
 export default async function handler(req, res) {
    let animals
