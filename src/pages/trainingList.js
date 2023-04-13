@@ -23,12 +23,20 @@ export default function Name() {
 
     if (isLoading) return <div><h2>Loading</h2></div>
 
+    if (page == 1 && !data) {
+        return  (
+            <>
+                <h1><Link href="/">Dog Training</Link></h1>
+                <h2>Not logged in as an admin</h2>
+            </>
+        )
+    }
 
     if (page == 1) {
         return (
             <>
                 <h1><Link href="/">Dog Training</Link></h1>
-                <h2>Animals</h2>
+                <h2>Training logs</h2>
                 {isValidating ? (
                     <h2>Validating</h2>
                 ) : (
