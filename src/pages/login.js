@@ -18,7 +18,7 @@ export default function SignIn() {
     return (
         <>
             <h1><Link href="/">Dog Training</Link></h1>
-            <h2>Users</h2>
+            <div class="login_body"><h2>Users</h2>
             <>
                     <input type = "text"  placeholder="email" value={e}
                         onChange={(event) => {
@@ -32,7 +32,7 @@ export default function SignIn() {
                         logIn(`/api/user/verify`, e, p)
 
                     }}>Log In</button>
-                </>
+                </></div>
         </>
     )
 }

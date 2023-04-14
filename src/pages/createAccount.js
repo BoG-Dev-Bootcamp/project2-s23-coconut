@@ -30,6 +30,7 @@ export default function SignUp() {
     return (
         <>
             <h1><Link href="/">Dog Training</Link></h1>
+            <div class="login_body">
             <h2>Users</h2>
             <>
                     <input type = "text"  placeholder="first name" value={fn}
@@ -54,6 +55,7 @@ export default function SignUp() {
 
                     }}>Sign up</button>
                 </>
+            </div>
         </>
     )
 }

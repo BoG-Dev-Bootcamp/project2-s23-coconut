@@ -1,20 +1,194 @@
 body {
+
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
     background-color: black;
+
     color: white;
+
 }
-a {
-    display: block;
-    padding: 10px 10px 20px;
-    margin: 5px;
-    max-width: 500px;
-    border-radius: 5px;
-    text-decoration: none;
-    color: white;
-    cursor: pointer;
-    text-align: left;
+
+ 
+
+h1 {
+
+    text-align: center;
+
+    margin-top: 50px;
+
 }
+
+ 
+
 .pages {
+
     display: flex;
-    flex-direction: row
+    text-align: center;
+
   }
+
+.list_body {
+
+    display: block;
+
+    margin: 0 auto;
+
+    max-width: 300px;
+
+    min-height: 50px;
+
+    padding: 20px;
+
+    background-color: #ffffff;
+
+    border-radius: 10px;
+    color: cornflowerblue;
+
+}
+
+.list_body button {
+    display: row;
+
+    margin: 0 auto;
+
+    min-width: 150px;
+
+    max-height: 25px;
+
+    background-color: cornflowerblue;
+
+    border-radius: 5px;
+
+    border: 0px solid black;
+
+    text-align: center;
+
+    font-size: 8pt;
+
+    text-transform: uppercase;
+
+    color: #ffffff;
+}
+
+.login_body {
+
+    display: block;
+
+    margin: 0 auto;
+
+    max-width: 300px;
+
+    min-height: 50px;
+
+    padding: 20px;
+
+    background-color: #ffffff;
+
+    border-radius: 10px;
+    color: cornflowerblue;
+
+}
+
+ 
+
+.login_body a {
+
+    display: block;
+
+    margin: 0 auto;
+
+    max-width: 290px;
+
+    min-height: 25px;
+
+    background-color: powderblue;
+
+    margin-bottom: 10px;
+
+    text-align: center;
+
+    padding: 10px 0 5px 0;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+
+    color: cornflowerblue;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+}
+
+ 
+
+.login_body h2 {
+
+    display: block;
+
+    margin: 0 auto;
+
+    color: cornflowerblue;
+
+    font-size: 24pt;
+
+    text-align: center;
+
+    margin-bottom: 15px;
+
+    text-transform: uppercase;
+
+}
+
+ 
+
+.login_body input {
+
+    display: block;
+
+    margin: 0 auto;
+
+    min-width: 290px;
+
+    min-height: 50px;
+
+    background-color: silver;
+
+    border-radius: 5px;
+
+    margin-bottom: 10px;
+
+    border: 0px solid black;
+
+    padding: 0px 0px 0px 10px;
+
+}
+
+ 
+
+.login_body button {
+
+    display: block;
+
+    margin: 0 auto;
+
+    min-width: 290px;
+
+    min-height: 100px;
+
+    background-color: cornflowerblue;
+
+    border-radius: 5px;
+
+    border: 0px solid black;
+
+    text-align: center;
+
+    font-size: 20pt;
+
+    text-transform: uppercase;
+
+    color: #ffffff;
+
+}

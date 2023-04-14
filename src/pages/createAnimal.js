@@ -20,7 +20,7 @@ export default function CreateAnimal() {
     return (
         <>
             <h1><Link href="/">Dog Training</Link></h1>
-            <h2>Users</h2>
+            <div class="login_body"><h2>Create animal</h2>
             <>
                     <input type = "text"  placeholder="name" value={n}
                         onChange={(event) => {
@@ -38,7 +38,7 @@ export default function CreateAnimal() {
                         createAnimal(`/api/animal`, n, ht, dob)
 
                     }}>Log an animal</button>
-                </>
+                </></div>
         </>
     )
 }
