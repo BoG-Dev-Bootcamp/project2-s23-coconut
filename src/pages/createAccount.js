@@ -30,7 +30,7 @@ export default function SignUp() {
     return (
         <>
             <h1><Link href="/">Dog Training</Link></h1>
-            <div class="login_body">
+            <div className="login_body">
             <h2>Users</h2>
             <>
                     <input type = "text"  placeholder="first name" value={fn}
@@ -52,7 +52,7 @@ export default function SignUp() {
                     <button onClick={() => {
                         createUser(`/api/user`, fn, ln, e, p)
                         logIn(`/api/user/verify`, e, p)
-
+                        window.location.href = '/'
                     }}>Sign up</button>
                 </>
             </div>

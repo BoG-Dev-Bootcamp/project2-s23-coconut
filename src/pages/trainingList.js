@@ -36,7 +36,7 @@ export default function Name() {
         return (
             <>
                 <h1><Link href="/">Dog Training</Link></h1>
-                <div class="list_body"><h2>Training logs</h2>
+                <div className="list_body"><h2>Training logs</h2>
                 {isValidating ? (
                     <h2>Validating</h2>
                 ) : (
@@ -64,7 +64,7 @@ export default function Name() {
     return (
         <>
             <h1><Link href="/">Dog Training</Link></h1>
-            <div class="list_body"><h2>Training Logs</h2>
+            <div className="list_body"><h2>Training Logs</h2>
             {isValidating ? (
                 <h2>Validating</h2>
             ) : (

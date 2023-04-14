@@ -11,7 +11,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <h1>Dog Training Links</h1>
-      <div class="login_body">
+      <div className="login_body">
       <Link href="/createAccount">Sign up</Link>
       <Link href="/login">Log in</Link>
       <Link href="/userList">Get a list of users</Link>

@@ -37,7 +37,7 @@ export default function Name() {
         return (
             <>
                 <h1><Link href="/">Dog Training</Link></h1>
-                <div class="list_body"><h2>Animals</h2>
+                <div className="list_body"><h2>Animals</h2>
                 {isValidating ? (
                     <h2>Validating</h2>
                 ) : (
@@ -55,7 +55,7 @@ export default function Name() {
         return (
             <>
                 <h1><Link href="/">Dog Training</Link></h1>
-                <div class="list_body"><p>Not a valid page</p>
+                <div className="list_body"><p>Not a valid page</p>
                 <button onClick={() => setPage(page - 1)}>Previous</button>
                 <p>Page: {page}</p></div>
             </>
@@ -65,7 +65,7 @@ export default function Name() {
     return (
         <>
             <h1><Link href="/">Dog Training</Link></h1>
-            <div class="list_body"><h2>Animals</h2>
+            <div className="list_body"><h2>Animals</h2>
             {isValidating ? (
                 <h2>Validating</h2>
             ) : (

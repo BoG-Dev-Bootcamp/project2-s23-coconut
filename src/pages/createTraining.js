@@ -22,7 +22,7 @@ export default function CreateTraining() {
     return (
         <>
             <h1><Link href="/">Dog Training</Link></h1>
-            <div class="login_body"><h2>Users</h2>
+            <div className="login_body"><h2>Users</h2>
             <>
                     <input type = "text"  placeholder="date" value={date}
                         onChange={(event) => {
@@ -42,7 +42,7 @@ export default function CreateTraining() {
                         }} />
                     <button onClick={() => {
                         createTraining(`/api/training`, date, des, h, a)
-
+                        window.location.href = '/'
                     }}>Create Training</button>
                 </></div>
         </>

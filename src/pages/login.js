@@ -18,7 +18,7 @@ export default function SignIn() {
     return (
         <>
             <h1><Link href="/">Dog Training</Link></h1>
-            <div class="login_body"><h2>Users</h2>
+            <div className="login_body"><h2>Users</h2>
             <>
                     <input type = "text"  placeholder="email" value={e}
                         onChange={(event) => {
@@ -30,7 +30,7 @@ export default function SignIn() {
                         }} />
                     <button onClick={() => {
                         logIn(`/api/user/verify`, e, p)
-
+                        window.location.href = '/'
                     }}>Log In</button>
                 </></div>
         </>
