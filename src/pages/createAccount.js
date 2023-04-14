@@ -52,7 +52,7 @@ export default function SignUp() {
                     <button onClick={() => {
                         createUser(`/api/user`, fn, ln, e, p)
                         logIn(`/api/user/verify`, e, p)
-                        window.location.href = '/'
+                        window.location.pathname = '/'
                     }}>Sign up</button>
                 </>
             </div>

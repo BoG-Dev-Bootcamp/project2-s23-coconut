@@ -36,7 +36,7 @@ export default function CreateAnimal() {
                         }} />
                     <button onClick={() => {
                         createAnimal(`/api/animal`, n, ht, dob)
-                        window.location.href = '/'
+                        window.location.pathname = '/'
                     }}>Log an animal</button>
                 </></div>
         </>

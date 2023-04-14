@@ -30,7 +30,7 @@ export default function SignIn() {
                         }} />
                     <button onClick={() => {
                         logIn(`/api/user/verify`, e, p)
-                        window.location.href = '/'
+                        window.location.pathname = '/'
                     }}>Log In</button>
                 </></div>
         </>

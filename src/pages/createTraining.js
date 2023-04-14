@@ -42,7 +42,7 @@ export default function CreateTraining() {
                         }} />
                     <button onClick={() => {
                         createTraining(`/api/training`, date, des, h, a)
-                        window.location.href = '/'
+                        window.location.pathname = '/'
                     }}>Create Training</button>
                 </></div>
         </>
